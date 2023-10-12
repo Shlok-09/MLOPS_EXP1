@@ -18,7 +18,7 @@ X = df.drop('output', axis = 1)
 y = df['output']
 
 from sklearn.model_selection import train_test_split
-from xgboost import XGBClassifier
+# from xgboost import XGBClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 # from catboost import CatBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
