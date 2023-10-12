@@ -70,6 +70,9 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 acc = accuracy_score(y_test, predictions)*100
 print(acc)
 
+if acc<85:
+    raise Exception("Accuracy is less! Can't Commit!")
+
 
 model.save('model.h5')
 # print(classification_report(y_test, predictions))
