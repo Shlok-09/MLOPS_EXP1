@@ -29,9 +29,8 @@ jobs:
         echo "::set-output name=accuracy::$(cat accuracy.txt)"
     - name: Check Accuracy
       run: |
-        accuracy=80
-        accuracy1 = 63.4572
-        if (( $(echo "$accuracy1 < 75" | bc -l) )); then
+        accuracy=63.5294
+        if (( $(echo "$accuracy < 75" | bc -l) )); then
           echo "Model accuracy is below 75%. Preventing push."
           exit 1
         fi
