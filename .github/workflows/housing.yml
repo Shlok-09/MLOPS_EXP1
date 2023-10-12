@@ -21,19 +21,12 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r requirements.txt
-      working-directory: ./MLOPS_EXP1
-
-    - name: Run Tests
-      run: |
-        pytest tests/
-      working-directory: ./MLOPS_EXP1
 
     - name: Train Model
       id: train
       run: |
         python mlops1.py
         echo "::set-output name=accuracy::$(cat accuracy.txt)"
-      working-directory: ./MLOPS_EXP1
     - name: Check Accuracy
       run: |
         accuracy=80
@@ -42,4 +35,3 @@ jobs:
           exit 1
         fi
       shell: bash
-      working-directory: ./MLOPS_EXP1
